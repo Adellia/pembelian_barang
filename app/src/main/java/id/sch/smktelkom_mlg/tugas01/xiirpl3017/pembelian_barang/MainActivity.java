@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -50,6 +51,68 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void doProcess() {
+        if (isValid()) {
+            String nama = etNama.getText().toString();
+            int tlp = Integer.parseInt(etTlp.getText().toString());
+            String alamat = etAlm.getText().toString();
+            String hasil = null;
+            if (rgBayar.getCheckedRadioButtonId() != -1) {
+                RadioButton rb = (RadioButton) findViewById(rgBayar.getCheckedRadioButtonId());
+                hasil = rb.getText().toString();
+            }
+            String kategori = ". Kategori barang Anda : ";
+            int startlen = kategori.length();
+            if (cbMP.isChecked()) kategori += cbMP.getText() + ", ";
+            if (cbBC.isChecked()) kategori += cbBC.getText() + ", ";
+            if (cbN.isChecked()) kategori += cbN.getText() + ", ";
+            if (cbD.isChecked()) kategori += cbD.getText() + ". ";
+
+            if (kategori.length() == startlen) kategori += " belum Anda pilih ";
+
+            if (hasil == null) {
+                tvHasil.setText("Anda Belum memilih Pembayaran");
+            } else {
+                tvHasil.setText("Pelanggan " + nama + " jumlah barang yang harus dibayar akan dikirim di " + tlp + ". Metode pembayaran yang dilakukan adalah " + hasil + ". Barang akan dikirim dengan " + spEksp.getSelectedItem().toString() + kategori +
+                        ". Mohon lakukan pembayaran 1 x 24 jam. Bila tidak, pesanan Anda akan dibatalkan secara otomatis.");
+            }
+        }
     }
 
+    private boolean isValid() {
+        boolean valid = true;
+
+        String nama = etNama.getText().toString();
+        String tlp = etTlp.getText().toString();
+        String alamat = etAlm.getText().toString();
+
+        if (nama.isEmpty())
+
+        {
+            etNama.setError("Nama belum diisi");
+            valid = false;
+        } else if (nama.length() < 3) {
+            etNama.setError("Mohon isi nama lengkap");
+            valid = false;
+        } else {
+            etNama.setError(null);
+        }
+
+        if (tlp.isEmpty()) {
+            etTlp.setError("Nomor Telepon belum diisi");
+            valid = false;
+        } else {
+            etTlp.setError(null);
+        }
+
+        if (alamat.isEmpty()) {
+            etAlm.setError("Alamat belum diisi");
+            valid = false;
+        } else {
+            etAlm.setError(null);
+        }
+
+
+        return valid;
+
+    }
 }
