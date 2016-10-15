@@ -28,38 +28,23 @@
             android:layout_gravity="right"
             android:src="@drawable/logo" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nama" />
-
         <EditText
             android:id="@+id/editNama"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No. Telepon" />
+            android:hint="Nama" />
 
         <EditText
             android:id="@+id/editTlp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Alamat" />
+            android:hint="No. Telepon" />
 
         <EditText
             android:id="@+id/editAlm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="Alamat" />
 
         <TextView
             android:id="@+id/textView4"
@@ -68,30 +53,36 @@
             android:text="Metode Pembayaran :"
             android:textColor="#000000" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
+        <RadioGroup
+            android:id="@+id/rgroupBayar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bayar di Tempat" />
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kartu Kredit" />
+            <RadioButton
+                android:id="@+id/radioButtonBT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bayar di Tempat" />
 
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bank Transfer" />
+            <RadioButton
+                android:id="@+id/radioButtonKK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kartu Kredit" />
 
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:text="Hello Pay, Bayar di Indomart" />
+            <RadioButton
+                android:id="@+id/radioButtonBTF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bank Transfer" />
+
+            <RadioButton
+                android:id="@+id/radioButtonHP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Hello Pay, Bayar di Indomart" />
+        </RadioGroup>
 
         <TextView
             android:id="@+id/textView5"
@@ -114,37 +105,37 @@
             android:textColor="#010101" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/cbMP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mudah Pecah" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/cbBC"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Barang Cair" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/cbNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Normal" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
+            android:id="@+id/cbDoc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dokumen" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonOK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Proses" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textViewHasil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
