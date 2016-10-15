@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="eks">
+        <item>JNE</item>
+        <item>POS</item>
+        <item>SiCepat</item>
+        <item>Travel</item>
+        <item>Gojek</item>
+    </string-array>
+</resources>
